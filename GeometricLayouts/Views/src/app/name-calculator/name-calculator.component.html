@@ -1,0 +1,25 @@
+<form #triangleForm="ngForm">
+  <div class="row">
+    <label>V1</label>
+    <input type="text" [(ngModel)]="triangle.v1.x" name="v1x" placeholder="X" required>
+    <input type="text" [(ngModel)]="triangle.v1.y" name="v1y" placeholder="Y" required>
+  </div>
+  <div class="row">
+    <label>V2</label>
+    <input type="text" [(ngModel)]="triangle.v2.x" name="v2x" placeholder="X" required>
+    <input type="text" [(ngModel)]="triangle.v2.y" name="v2y" placeholder="Y" required>
+  </div>
+  <div class="row">
+    <label>V3</label>
+    <input type="text" [(ngModel)]="triangle.v3.x" name="v3x" placeholder="X" required>
+    <input type="text" [(ngModel)]="triangle.v3.y" name="v3y" placeholder="Y" required>
+  </div>
+  <button (click)="onShowName()" [disabled]="triangleForm.invalid">Show name</button>
+</form>
+
+<div class="result">
+  <div class="message">
+    <div class="values" *ngIf="triangleName">Triangle name: <b>{{triangleName}}</b></div>
+    <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<form class="switch-form">
+  <div class="radio-toggle has-toggle-input">
+    <label class="form-check-label" [attr.active]="isNameCalculatorVisible ? null : ''">
+      <input class="form-check-input" type="radio" value="generate-triangle" style="display: none;" (click)="onShowTriangleGenerator()">
+      Generate triangle by name
+    </label>
+    <label class="form-check-label" [attr.active]="isNameCalculatorVisible ? '' : null">
+      <input class="form-check-input" type="radio" value="calculate-name" style="display: none;" (click)="onShowNameCalculator()">
+      Get name by triangle coordinates
+    </label>
+  </div>
+</form>
+
+<app-triangle-generator [attr.hidden]="isNameCalculatorVisible ? '' : null"></app-triangle-generator>
+<app-name-calculator [attr.hidden]="isNameCalculatorVisible ? null : ''"></app-name-calculator>
+
+<ng4-loading-spinner></ng4-loading-spinner>

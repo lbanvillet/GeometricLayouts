@@ -1,0 +1,146 @@
+.switch-form {
+  margin: 0px auto;
+  padding-bottom: 0px;
+  text-align: center;
+}
+.radio-toggle {
+  display: inline-block;
+}
+
+.has-toggle-input {
+
+  label {
+    display: block;
+    float: left;
+    padding: 5px 10px;
+    margin: auto auto auto -1px;
+    background: #f4f4f4;
+    color: #444;
+    border: 1px #d0d0d0 solid;
+    line-height: normal;
+    overflow: hidden;
+    cursor: pointer;
+
+    &[active] {
+      background: #cb0928;
+      border-color: #cb0928;
+      color: white;
+      font-weight: bolder;
+    }
+
+    &:first-of-type {
+      margin-left: auto;
+    }
+  }
+}
+
+form {
+  font-family: 'Open Sans Condensed', arial, sans;
+  width: 600px;
+  padding: 30px;
+  background: #FFFFFF;
+  margin: 20px auto;
+
+  input[type="text"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+  }
+
+  .row {
+
+    label {
+      display: inline-block;
+      width: 20%;
+      color: gray;
+      text-align: center;
+    }
+
+     input {
+      display: inline-block;
+      width: 30%;
+      margin: 0px 0px 30px 30px;
+      text-align: center;
+    }
+  }
+
+  button {
+    background-color: #4889f2;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 10px;
+
+    &:hover:enabled {
+      background-color: #48c4f1;
+    }
+
+    &[disabled] {
+      background-color: #d4d6d8;
+    }
+  }
+}
+
+.result {
+  font-family: 'Open Sans Condensed', arial, sans;
+  width: 1000px;
+  background: #FFFFFF;
+  margin: 10px auto;
+  text-align: center;
+
+  .message {
+    height: 30px;
+  }
+
+  ul {
+    padding: 0px;
+  }
+
+  li {
+    outline: none;
+    display: inline;
+    width: 100%;
+    padding: 40px;
+    border: none;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+  }
+}
+
+.error {
+  color: red;
+}
+
+::-webkit-input-placeholder {
+  color: #d4d6d8;
+}
+
+:-moz-placeholder {
+  color: #d4d6d8;
+}
+
+::-moz-placeholder {
+  color: #d4d6d8;
+}
+
+:-ms-input-placeholder {
+  color: #d4d6d8;
+}

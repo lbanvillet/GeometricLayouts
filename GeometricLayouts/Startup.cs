@@ -50,7 +50,8 @@ namespace GeometricLayouts
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Geometric Layouts API");
             });
-
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseMvc();
         }

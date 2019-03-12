@@ -58,12 +58,12 @@ namespace GeometricLayouts.Tests.Controllers
                 V2 = new Vertex(20, 10),
                 V3 = new Vertex(30, 20)
             };
-            string expected = "B5";
-            _mockTriangleService.Setup(service => service.GetName(requested)).Returns(expected);
+            string expectedName = "B5";
+            _mockTriangleService.Setup(service => service.GetName(requested)).Returns(expectedName);
 
-            ActionResult<string> result = _triangleController.GetName(requested);
+            ActionResult<GetTriangleNameResponse> result = _triangleController.GetName(requested);
 
-            Assert.Equal(expected, result.Value);
+            Assert.Equal(expectedName, result.Value.Name);
         }
 
         [Fact]
@@ -72,7 +72,7 @@ namespace GeometricLayouts.Tests.Controllers
             Triangle requested = new Triangle();
             _mockTriangleService.Setup(service => service.GetName(requested)).Returns((string) null);
 
-            ActionResult<string> result = _triangleController.GetName(requested);
+            ActionResult<GetTriangleNameResponse> result = _triangleController.GetName(requested);
 
             Assert.IsType<NotFoundResult>(result.Result);
         }

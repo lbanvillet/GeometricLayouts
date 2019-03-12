@@ -5,8 +5,9 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
     <CodeAnalysisRuleSet>stylecop.ruleset</CodeAnalysisRuleSet>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>

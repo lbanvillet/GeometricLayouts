@@ -83,13 +83,13 @@ namespace GeometricLayouts.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public ActionResult<string> GetName([FromBody] Triangle triangle)
+        public ActionResult<GetTriangleNameResponse> GetName([FromBody] Triangle triangle)
         {
             string name = this.triangleService.GetName(triangle);
 
             if (name != null)
             {
-                return name;
+                return new GetTriangleNameResponse(name);
             }
             else
             {

@@ -1,0 +1,31 @@
+<form #nameForm="ngForm">
+  <input [class.error]="nameForm.invalid && triangleName.length > 1" type="text" [(ngModel)]="triangleName" name="name" placeholder="Enter a triangle name (e.g. 'B5')" pattern="^[A-F]([1-9]|1[012])$" required autofocus>
+  <button (click)="onShowTriangle()" [disabled]="nameForm.invalid">Show triangle</button>
+</form>
+
+<div class="result">
+  <div class="message">
+    <ul *ngIf="triangle">
+      <li><b>V1</b> [{{triangle?.v1.x}}, {{triangle?.v1.y}}]</li>
+      <li><b>V2</b> [{{triangle?.v2.x}}, {{triangle?.v2.y}}]</li>
+      <li><b>V3</b> [{{triangle?.v3.x}}, {{triangle?.v3.y}}]</li>
+    </ul>
+    <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+  </div>
+
+  <svg class="layout" viewBox="0 0 60 60" width="600px" height="600px">
+    <defs>
+      <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="gray" stroke-width="0.05px" />
+      </pattern>
+      <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+        <rect width="60" height="60" fill="url(#smallGrid)" />
+        <path d="M 60 0 L 0 0 0 60" fill="none" />
+      </pattern>
+    </defs>
+    <svg:g>
+      <svg:polygon *ngIf="triangle" fill="#4889f2" attr.points="{{triangle?.v1.x}},{{triangle?.v1.y}} {{triangle?.v2.x}},{{triangle?.v2.y}} {{triangle?.v3.x}},{{triangle?.v3.y}}" />
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg:g>
+  </svg>
+</div>
