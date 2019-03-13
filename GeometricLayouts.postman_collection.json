@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "1b182237-462e-47ee-b06f-2f4fefc6c5f9",
+		"name": "GeometricLayouts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get triangle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://geometric-layouts.herokuapp.com/api/triangles/B5",
+					"protocol": "https",
+					"host": [
+						"geometric-layouts",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"triangles",
+						"B5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get name",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"v1\": {\n    \t\"x\": \"10\",\n    \t\"y\": \"20\"\n    },\n    \"v2\": {\n    \t\"x\": \"10\",\n    \t\"y\": \"10\"\n    },\n    \"v3\": {\n    \t\"x\": \"20\",\n    \t\"y\": \"20\"\n    }\n}"
+				},
+				"url": {
+					"raw": "https://geometric-layouts.herokuapp.com/api/triangles/name",
+					"protocol": "https",
+					"host": [
+						"geometric-layouts",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"triangles",
+						"name"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

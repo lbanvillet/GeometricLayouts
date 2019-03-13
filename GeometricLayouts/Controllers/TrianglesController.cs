@@ -31,7 +31,7 @@ namespace GeometricLayouts.Controllers
         /// <param name="name">
         /// <para>The name of the triangle to retrieve such as:</para>
         /// <ul>
-        /// <li>The first character is a letter between <i>A</i> and <i>E</i> which representing the row.</li>
+        /// <li>The first character is a letter between <i>A</i> and <i>E</i> representing the row.</li>
         /// <li>The other one or two characters are a number between <i>1</i> and <i>12</i> representing the column.</li>
         /// </ul>
         /// </param>

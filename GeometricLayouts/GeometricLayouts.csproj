@@ -10,6 +10,7 @@
   
   <ItemGroup>
     <Folder Include="wwwroot\" />
+    <Content Remove="Views\**" />
   </ItemGroup>
 
   <ItemGroup>

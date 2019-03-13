@@ -10,6 +10,8 @@ All REST calls are sent to a local proxy that can be configured through the `pro
 
 ## Build
 
+Run `npm install` to download all the project dependencies.
+
 Run `ng build` to build the project. The build artifacts will be stored in the `../wwwroot` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests

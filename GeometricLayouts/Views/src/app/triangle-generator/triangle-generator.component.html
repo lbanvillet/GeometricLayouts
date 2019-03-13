@@ -1,5 +1,6 @@
 <form #nameForm="ngForm">
-  <input [class.error]="nameForm.invalid && triangleName.length > 1" type="text" [(ngModel)]="triangleName" name="name" placeholder="Enter a triangle name (e.g. 'B5')" pattern="^[A-F]([1-9]|1[012])$" required autofocus>
+  <input type="text" [(ngModel)]="triangleName" name="name" placeholder="Enter a triangle name (e.g. 'B5')" pattern="^[A-F]([1-9]|1[012])$" required
+         [class.error]="nameForm.invalid && triangleName.length > 1" oninput="value = value.toUpperCase()" autofocus>
   <button (click)="onShowTriangle()" [disabled]="nameForm.invalid">Show triangle</button>
 </form>
 
