@@ -59,3 +59,11 @@ Because there is **a limited number of triangles**, I thought it would be quicke
 * The design could certainly be enhanced with extra interactions such as tooltips to improve the user experience.
 * The automated testing has been reduced to the very minimum with no HTML checks or end-to-end testing.
 * To improve the look and feel, the size of the triangles has been multiplied by 10 (100 pixels instead of 10).
+
+### Possible back-end improvements
+I had to compromise between code readability and maintenance. I have made architecture decisions I would not necessarily make for a real project because I knew it was not meant to evolve. For this reason, all the SOLID principles were not followed. Here is a list of improvements we could make to get closer to a production-ready application:
+* The same objects are used by the REST controller and the services. They should ideally be differentiated.
+* The project could be more extensive by introducing a Shape interface the Triangle class would extend.
+* The service implementation does too many things. It could be split to follow the single-responsibility principle:
+	* The dictionary provisioning could be moved to a data layer and injected in the service.
+	* Calculation of coordinates could be delegated to the shape itself.
