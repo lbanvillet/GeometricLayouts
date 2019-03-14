@@ -22,9 +22,9 @@ The application is built with **.NET Core 2.1** and **Angular 7**. The front-end
 **Pre-requisite**: _Node.js_ has to be installed on your machine.
 1. Open a command prompt in _<local-repo>/GeometricLayouts/Views_ folder.
 2. Run `npm install` to download the project dependencies.
-3. Run `ng build --prod` to generate the ass
+3. Run `ng build --prod` to generate the output files in _wwwroot_ folder.
 
-The files are generated in the _wwwroot_ folder. More details about the Angular project is available [here](GeometricLayouts/Views/README.md).
+More details about the Angular project is available [here](GeometricLayouts/Views/README.md).
 
 ### Build and run the .NET core app
 1. Open a command prompt in _<local-repo>/GeometricLayouts_ folder.
@@ -37,7 +37,7 @@ The files are generated in the _wwwroot_ folder. More details about the Angular 
 I have captured the major choices made throughout the implementation of the coding test and listed them in this section.
 
 ### "Get triangle name" operation uses a _POST_
-To retrieve a triangle column and row (question 1.B) that I called _name_ to simplify, the request data must contain the triangle coordinates. Although _GET_ is preferred for read-only operations, I decided to use _POST_ because a request body is needed to send the triangle details and using a request body with _GET_ is not recommended.
+To retrieve a triangle column and row (question 1.B) that I called _name_ to simplify, the request data must contain the triangle coordinates. This data structure is not trivial and query parameters are not suitable. Therefore, even if _GET_ is preferred for read-only operations, I decided to use _POST_ because a request body is needed to send the triangle details and using a request body in _GET_ is not recommended.
 
 ### Triangle vertices are ordered
 I have made the assumption that vertices are not interchangeable:
@@ -64,6 +64,6 @@ Because there is **a limited number of triangles**, I thought it would be quicke
 I had to compromise between code readability and maintenance. I have made architecture decisions I would not necessarily make for a real project because I knew it was not meant to evolve. For this reason, all the SOLID principles were not followed. Here is a list of improvements we could make to get closer to a production-ready application:
 * The same objects are used by the REST controller and the services. They should ideally be differentiated.
 * The project could be more extensive by introducing a Shape interface the Triangle class would extend.
-* The service implementation does too many things. It could be split to follow the single-responsibility principle:
+* The service implementation deals with several concerns. It could be split to follow the single-responsibility principle:
 	* The dictionary provisioning could be moved to a data layer and injected in the service.
 	* Calculation of coordinates could be delegated to the shape itself.
